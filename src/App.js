@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 
 import './App.css';
 import DemoOutput from './components/UI/Button/Demo/DemoOutput';
@@ -7,9 +7,9 @@ import Button from './components/UI/Button/Button';
 function App() {
   const [showParagraf, setShowParagraf] = useState(false);
 
-  const toggleParagrafHandler = () => {
+  const toggleParagrafHandler = useCallback(() => {
     setShowParagraf(prevShowParagraf => !prevShowParagraf)
-  }
+  },[]);
 
   console.log("App running");
 
