@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
 import './App.css';
+import DemoOutput from './components/UI/Button/Demo/DemoOutput';
+import Button from './components/UI/Button/Button';
 
 function App() {
   const [showParagraf, setShowParagraf] = useState(false);
@@ -9,11 +11,13 @@ function App() {
     setShowParagraf(prevShowParagraf => !prevShowParagraf)
   }
 
+  console.log("App running");
+
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      {showParagraf && <p>This is new!</p>}
-      <button onClick={toggleParagrafHandler} >Toggle Paragraf</button>
+      <DemoOutput  show={false} />
+      <Button onClick={toggleParagrafHandler} >Toggle Paragraf</Button>
     </div>
   );
 }
